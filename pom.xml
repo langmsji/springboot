@@ -8,6 +8,9 @@
     <artifactId>springboot-mybatis-mall</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
+    <name>shop</name>
+    <packaging>war</packaging>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -22,6 +25,13 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <!-- 排除内置容器，排除内置容器导出成war包可以让外部容器运行spring-boot项目-->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -131,6 +141,7 @@
     </dependencies>
 
     <build>
+        <finalName>shop</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

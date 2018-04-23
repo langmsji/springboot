@@ -24,6 +24,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
 server:
+  context-path: /shop
   port: 8086
 logging:
   level.com.mall: DEBUG
